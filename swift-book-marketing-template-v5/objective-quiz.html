@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solutions by Objective | Swift Book Marketing</title>
+    <meta
+      name="description"
+      content="A seven-question solutions quiz for Swift Book Marketing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="quiz-styles.css" />
+  </head>
+  <body class="quiz-body">
+    <header class="quiz-header">
+      <div class="container quiz-head-wrap">
+        <a class="brand" href="index.html">
+          <img src="assets/swift-logo.svg" alt="Swift Book Marketing logo" />
+        </a>
+        <a class="btn btn-secondary btn-small" href="index.html"
+          >Back to Website</a
+        >
+      </div>
+    </header>
+
+    <main class="quiz-main">
+      <section class="quiz-hero">
+        <div class="quiz-grid-overlay"></div>
+        <div class="container quiz-shell">
+          <div class="quiz-intro">
+            <p class="eyebrow">Solutions by Objective</p>
+            <h1>
+              Answer seven questions to see the kind of support your book may
+              need next.
+            </h1>
+            <p>
+              This separate page is designed to guide authors based on their
+              stage, objective, and marketing priorities.
+            </p>
+          </div>
+
+          <div class="quiz-card">
+            <div class="quiz-progress">
+              <span id="progressText">Question 1 of 7</span>
+              <div class="progress-bar"><i id="progressFill"></i></div>
+            </div>
+
+            <div id="quizStage"></div>
+
+            <div class="quiz-controls">
+              <button class="btn btn-secondary" id="prevBtn" type="button">
+                Back
+              </button>
+              <button class="btn btn-primary" id="nextBtn" type="button">
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="quiz-script.js"></script>
+  </body>
+</html>
