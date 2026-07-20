@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-function Home() {
+export function Home() {
   return (
     <div className="min-h-screen bg-parchment">
       <Nav />

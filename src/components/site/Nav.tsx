@@ -2,8 +2,9 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { useV2Base } from "@/hooks/use-v2";
 
-const links = [
+const baseLinks = [
   { to: "/solutions", label: "Marketing Solutions" },
   { to: "/goals", label: "Author Goals" },
   { to: "/results", label: "Results" },
@@ -16,8 +17,11 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isHome = pathname === "/";
+  const base = useV2Base();
+  const isHome = pathname === base + "/";
   const onDark = isHome && !scrolled;
+
+  const links = baseLinks.map((l) => ({ ...l, to: base + l.to }));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -35,7 +39,7 @@ export function Nav() {
       }`}
     >
       <div className="container-editorial flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
+        <Link to={base + "/"} className="flex items-center gap-3 shrink-0">
           <Logo variant={onDark ? "color" : "white"} className="h-9 w-auto" />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
@@ -55,7 +59,7 @@ export function Nav() {
         </nav>
         <div className="hidden lg:block">
           <Link
-            to="/assessment"
+            to={base + "/assessment"}
             className="inline-flex items-center gap-2 rounded-[6px] bg-brass px-5 py-3 text-sm font-medium text-white hover:bg-[var(--orange-hover)] hover:-translate-y-0.5 transition-all shadow-sm"
           >
             Request a Book Assessment
@@ -85,7 +89,7 @@ export function Nav() {
               </Link>
             ))}
             <Link
-              to="/assessment"
+              to={base + "/assessment"}
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-[6px] bg-brass px-5 py-3 text-sm font-medium text-white hover:bg-[var(--orange-hover)] transition-colors"
             >

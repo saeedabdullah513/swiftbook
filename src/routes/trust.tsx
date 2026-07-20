@@ -1,12 +1,13 @@
 import { createFileRoute, Outlet, Link, useMatches } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
+import { useV2Base } from "@/hooks/use-v2";
 
 export const Route = createFileRoute("/trust")({
   component: TrustLayout,
 });
 
-const pages = [
+const basePages = [
   { to: "/trust/ethical-marketing", label: "Ethical Marketing Standards" },
   { to: "/trust/author-rights", label: "Author Rights & Ownership" },
   { to: "/trust/pricing", label: "Pricing & Third-Party Costs" },
@@ -14,9 +15,12 @@ const pages = [
   { to: "/trust/guarantees", label: "What We Do Not Guarantee" },
 ] as const;
 
-function TrustLayout() {
+export function TrustLayout() {
   const matches = useMatches();
   const current = matches[matches.length - 1]?.pathname;
+  const base = useV2Base();
+  const pages = basePages.map((p) => ({ ...p, to: base + p.to }));
+
   return (
     <div className="min-h-screen">
       <Nav />

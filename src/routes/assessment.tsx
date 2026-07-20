@@ -29,7 +29,7 @@ const steps = [
 
 type FormState = Record<string, string>;
 
-function Assessment() {
+export function Assessment() {
   const [step, setStep] = useState(0);
   const [done, setDone] = useState(false);
   const [form, setForm] = useState<FormState>({});

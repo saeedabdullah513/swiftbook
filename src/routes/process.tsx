@@ -21,7 +21,7 @@ const stages = [
   { n: "05", title: "Reporting & Optimization", us: ["Weekly signals", "Monthly written reports with sources"], you: ["Review, redirect, or extend", "Full data handover at close"] },
 ];
 
-function Process() {
+export function Process() {
   return (
     <div className="min-h-screen">
       <Nav />

@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 import { BrandWatermark } from "./BrandWatermark";
+import { useV2Base } from "@/hooks/use-v2";
 
-const cols = [
+const baseCols = [
   {
     title: "Solutions",
     links: [
@@ -34,6 +35,12 @@ const cols = [
 ] as const;
 
 export function Footer() {
+  const base = useV2Base();
+  const cols = baseCols.map((c) => ({
+    ...c,
+    links: c.links.map((l) => ({ ...l, to: base + l.to })),
+  }));
+
   return (
     <footer className="relative mt-32 overflow-hidden border-t border-white/10 bg-navy text-white">
       <BrandWatermark
@@ -42,7 +49,7 @@ export function Footer() {
       />
       <div className="container-editorial relative z-10 py-16 grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <Logo variant="white" className="h-10 w-auto" />
+          <Logo variant="white" className="h-10 w-auto" v2Asset="stacked" />
           <p className="mt-6 max-w-sm text-sm text-white/72 leading-relaxed">
             A strategic book marketing partner. We assess your book, audience, and
             objectives before recommending a campaign.

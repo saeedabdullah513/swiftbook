@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -100,7 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600&display=swap",
       },
     ],
   }),
@@ -126,11 +127,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { pathname } = useLocation();
+  const isV2 = pathname.startsWith("/v2");
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className={isV2 ? "theme-v2" : undefined}>
+        <Outlet />
+      </div>
     </QueryClientProvider>
   );
 }

@@ -22,7 +22,7 @@ const goals = [
   { icon: Target, title: "Long-Term Platform", body: "The infrastructure that compounds across books.", steps: ["Author website & list", "Editorial calendar", "Quarterly authority plan"] },
 ];
 
-function Goals() {
+export function Goals() {
   return (
     <div className="min-h-screen">
       <Nav />

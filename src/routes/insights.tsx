@@ -20,7 +20,7 @@ const posts = [
   { cat: "Ethics", title: "Reading between the lines of an author-services proposal.", excerpt: "Red flags, missing deliverables, and language that hides the real invoice.", read: "12 min", date: "Feb 2025" },
 ];
 
-function Insights() {
+export function Insights() {
   return (
     <div className="min-h-screen">
       <Nav />

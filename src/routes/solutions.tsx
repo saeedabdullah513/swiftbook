@@ -36,7 +36,7 @@ const categories = [
   },
 ];
 
-function Solutions() {
+export function Solutions() {
   return (
     <div className="min-h-screen">
       <Nav />

@@ -21,7 +21,7 @@ const cases = [
   { cat: "Nonfiction", author: "James Ortega", title: "Signal Craft", cover: "from-[#fc6e06] to-[#e05f00]", challenge: "Independent nonfiction author with strong newsletter.", objective: "Convert existing audience into launch-week readers.", strategy: "Segmented launch sequence with reader-community activations and a two-week ad support layer.", duration: "9 weeks", metric: "62% list conversion · 4.6-star average across 240 launch-week reviews", source: "Client reported", limit: "Client-reported figures; review quality reflects existing readership goodwill." },
 ];
 
-function Results() {
+export function Results() {
   const [filter, setFilter] = useState<string>("All");
   const filtered = filter === "All" ? cases : cases.filter((c) => c.cat === filter);
   return (

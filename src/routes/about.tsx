@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-function About() {
+export function About() {
   return (
     <div className="min-h-screen">
       <Nav />

@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as V3RouteImport } from './routes/v3'
+import { Route as V2RouteImport } from './routes/v2'
 import { Route as TrustRouteImport } from './routes/trust'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as ResultsRouteImport } from './routes/results'
@@ -19,13 +21,55 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AssessmentRouteImport } from './routes/assessment'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as V3IndexRouteImport } from './routes/v3.index'
+import { Route as V2IndexRouteImport } from './routes/v2.index'
 import { Route as TrustIndexRouteImport } from './routes/trust.index'
+import { Route as V3TrustRouteImport } from './routes/v3.trust'
+import { Route as V3SolutionsRouteImport } from './routes/v3.solutions'
+import { Route as V3ResultsRouteImport } from './routes/v3.results'
+import { Route as V3ProcessRouteImport } from './routes/v3.process'
+import { Route as V3InsightsRouteImport } from './routes/v3.insights'
+import { Route as V3GoalsRouteImport } from './routes/v3.goals'
+import { Route as V3ContactRouteImport } from './routes/v3.contact'
+import { Route as V3AssessmentRouteImport } from './routes/v3.assessment'
+import { Route as V3AboutRouteImport } from './routes/v3.about'
+import { Route as V2TrustRouteImport } from './routes/v2.trust'
+import { Route as V2SolutionsRouteImport } from './routes/v2.solutions'
+import { Route as V2ResultsRouteImport } from './routes/v2.results'
+import { Route as V2ProcessRouteImport } from './routes/v2.process'
+import { Route as V2InsightsRouteImport } from './routes/v2.insights'
+import { Route as V2GoalsRouteImport } from './routes/v2.goals'
+import { Route as V2ContactRouteImport } from './routes/v2.contact'
+import { Route as V2AssessmentRouteImport } from './routes/v2.assessment'
+import { Route as V2AboutRouteImport } from './routes/v2.about'
 import { Route as TrustResultsRouteImport } from './routes/trust.results'
 import { Route as TrustPricingRouteImport } from './routes/trust.pricing'
 import { Route as TrustGuaranteesRouteImport } from './routes/trust.guarantees'
 import { Route as TrustEthicalMarketingRouteImport } from './routes/trust.ethical-marketing'
 import { Route as TrustAuthorRightsRouteImport } from './routes/trust.author-rights'
+import { Route as V3TrustIndexRouteImport } from './routes/v3.trust.index'
+import { Route as V2TrustIndexRouteImport } from './routes/v2.trust.index'
+import { Route as V3TrustResultsRouteImport } from './routes/v3.trust.results'
+import { Route as V3TrustPricingRouteImport } from './routes/v3.trust.pricing'
+import { Route as V3TrustGuaranteesRouteImport } from './routes/v3.trust.guarantees'
+import { Route as V3TrustEthicalMarketingRouteImport } from './routes/v3.trust.ethical-marketing'
+import { Route as V3TrustAuthorRightsRouteImport } from './routes/v3.trust.author-rights'
+import { Route as V2TrustResultsRouteImport } from './routes/v2.trust.results'
+import { Route as V2TrustPricingRouteImport } from './routes/v2.trust.pricing'
+import { Route as V2TrustGuaranteesRouteImport } from './routes/v2.trust.guarantees'
+import { Route as V2TrustEthicalMarketingRouteImport } from './routes/v2.trust.ethical-marketing'
+import { Route as V2TrustAuthorRightsRouteImport } from './routes/v2.trust.author-rights'
 
+const V3Route = V3RouteImport.update({
+  id: '/v3',
+  path: '/v3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const V2Route = V2RouteImport.update({
+  id: '/v2',
+  path: '/v2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TrustRoute = TrustRouteImport.update({
   id: '/trust',
   path: '/trust',
@@ -76,10 +120,110 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const V3IndexRoute = V3IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => V3Route,
+} as any)
+const V2IndexRoute = V2IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => V2Route,
+} as any)
 const TrustIndexRoute = TrustIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => TrustRoute,
+} as any)
+const V3TrustRoute = V3TrustRouteImport.update({
+  id: '/trust',
+  path: '/trust',
+  getParentRoute: () => V3Route,
+} as any)
+const V3SolutionsRoute = V3SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => V3Route,
+} as any)
+const V3ResultsRoute = V3ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => V3Route,
+} as any)
+const V3ProcessRoute = V3ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => V3Route,
+} as any)
+const V3InsightsRoute = V3InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => V3Route,
+} as any)
+const V3GoalsRoute = V3GoalsRouteImport.update({
+  id: '/goals',
+  path: '/goals',
+  getParentRoute: () => V3Route,
+} as any)
+const V3ContactRoute = V3ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => V3Route,
+} as any)
+const V3AssessmentRoute = V3AssessmentRouteImport.update({
+  id: '/assessment',
+  path: '/assessment',
+  getParentRoute: () => V3Route,
+} as any)
+const V3AboutRoute = V3AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => V3Route,
+} as any)
+const V2TrustRoute = V2TrustRouteImport.update({
+  id: '/trust',
+  path: '/trust',
+  getParentRoute: () => V2Route,
+} as any)
+const V2SolutionsRoute = V2SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => V2Route,
+} as any)
+const V2ResultsRoute = V2ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => V2Route,
+} as any)
+const V2ProcessRoute = V2ProcessRouteImport.update({
+  id: '/process',
+  path: '/process',
+  getParentRoute: () => V2Route,
+} as any)
+const V2InsightsRoute = V2InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => V2Route,
+} as any)
+const V2GoalsRoute = V2GoalsRouteImport.update({
+  id: '/goals',
+  path: '/goals',
+  getParentRoute: () => V2Route,
+} as any)
+const V2ContactRoute = V2ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => V2Route,
+} as any)
+const V2AssessmentRoute = V2AssessmentRouteImport.update({
+  id: '/assessment',
+  path: '/assessment',
+  getParentRoute: () => V2Route,
+} as any)
+const V2AboutRoute = V2AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => V2Route,
 } as any)
 const TrustResultsRoute = TrustResultsRouteImport.update({
   id: '/results',
@@ -106,6 +250,66 @@ const TrustAuthorRightsRoute = TrustAuthorRightsRouteImport.update({
   path: '/author-rights',
   getParentRoute: () => TrustRoute,
 } as any)
+const V3TrustIndexRoute = V3TrustIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V2TrustIndexRoute = V2TrustIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => V2TrustRoute,
+} as any)
+const V3TrustResultsRoute = V3TrustResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V3TrustPricingRoute = V3TrustPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V3TrustGuaranteesRoute = V3TrustGuaranteesRouteImport.update({
+  id: '/guarantees',
+  path: '/guarantees',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V3TrustEthicalMarketingRoute = V3TrustEthicalMarketingRouteImport.update({
+  id: '/ethical-marketing',
+  path: '/ethical-marketing',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V3TrustAuthorRightsRoute = V3TrustAuthorRightsRouteImport.update({
+  id: '/author-rights',
+  path: '/author-rights',
+  getParentRoute: () => V3TrustRoute,
+} as any)
+const V2TrustResultsRoute = V2TrustResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => V2TrustRoute,
+} as any)
+const V2TrustPricingRoute = V2TrustPricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => V2TrustRoute,
+} as any)
+const V2TrustGuaranteesRoute = V2TrustGuaranteesRouteImport.update({
+  id: '/guarantees',
+  path: '/guarantees',
+  getParentRoute: () => V2TrustRoute,
+} as any)
+const V2TrustEthicalMarketingRoute = V2TrustEthicalMarketingRouteImport.update({
+  id: '/ethical-marketing',
+  path: '/ethical-marketing',
+  getParentRoute: () => V2TrustRoute,
+} as any)
+const V2TrustAuthorRightsRoute = V2TrustAuthorRightsRouteImport.update({
+  id: '/author-rights',
+  path: '/author-rights',
+  getParentRoute: () => V2TrustRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -118,12 +322,46 @@ export interface FileRoutesByFullPath {
   '/results': typeof ResultsRoute
   '/solutions': typeof SolutionsRoute
   '/trust': typeof TrustRouteWithChildren
+  '/v2': typeof V2RouteWithChildren
+  '/v3': typeof V3RouteWithChildren
   '/trust/author-rights': typeof TrustAuthorRightsRoute
   '/trust/ethical-marketing': typeof TrustEthicalMarketingRoute
   '/trust/guarantees': typeof TrustGuaranteesRoute
   '/trust/pricing': typeof TrustPricingRoute
   '/trust/results': typeof TrustResultsRoute
+  '/v2/about': typeof V2AboutRoute
+  '/v2/assessment': typeof V2AssessmentRoute
+  '/v2/contact': typeof V2ContactRoute
+  '/v2/goals': typeof V2GoalsRoute
+  '/v2/insights': typeof V2InsightsRoute
+  '/v2/process': typeof V2ProcessRoute
+  '/v2/results': typeof V2ResultsRoute
+  '/v2/solutions': typeof V2SolutionsRoute
+  '/v2/trust': typeof V2TrustRouteWithChildren
+  '/v3/about': typeof V3AboutRoute
+  '/v3/assessment': typeof V3AssessmentRoute
+  '/v3/contact': typeof V3ContactRoute
+  '/v3/goals': typeof V3GoalsRoute
+  '/v3/insights': typeof V3InsightsRoute
+  '/v3/process': typeof V3ProcessRoute
+  '/v3/results': typeof V3ResultsRoute
+  '/v3/solutions': typeof V3SolutionsRoute
+  '/v3/trust': typeof V3TrustRouteWithChildren
   '/trust/': typeof TrustIndexRoute
+  '/v2/': typeof V2IndexRoute
+  '/v3/': typeof V3IndexRoute
+  '/v2/trust/author-rights': typeof V2TrustAuthorRightsRoute
+  '/v2/trust/ethical-marketing': typeof V2TrustEthicalMarketingRoute
+  '/v2/trust/guarantees': typeof V2TrustGuaranteesRoute
+  '/v2/trust/pricing': typeof V2TrustPricingRoute
+  '/v2/trust/results': typeof V2TrustResultsRoute
+  '/v3/trust/author-rights': typeof V3TrustAuthorRightsRoute
+  '/v3/trust/ethical-marketing': typeof V3TrustEthicalMarketingRoute
+  '/v3/trust/guarantees': typeof V3TrustGuaranteesRoute
+  '/v3/trust/pricing': typeof V3TrustPricingRoute
+  '/v3/trust/results': typeof V3TrustResultsRoute
+  '/v2/trust/': typeof V2TrustIndexRoute
+  '/v3/trust/': typeof V3TrustIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -140,7 +378,37 @@ export interface FileRoutesByTo {
   '/trust/guarantees': typeof TrustGuaranteesRoute
   '/trust/pricing': typeof TrustPricingRoute
   '/trust/results': typeof TrustResultsRoute
+  '/v2/about': typeof V2AboutRoute
+  '/v2/assessment': typeof V2AssessmentRoute
+  '/v2/contact': typeof V2ContactRoute
+  '/v2/goals': typeof V2GoalsRoute
+  '/v2/insights': typeof V2InsightsRoute
+  '/v2/process': typeof V2ProcessRoute
+  '/v2/results': typeof V2ResultsRoute
+  '/v2/solutions': typeof V2SolutionsRoute
+  '/v3/about': typeof V3AboutRoute
+  '/v3/assessment': typeof V3AssessmentRoute
+  '/v3/contact': typeof V3ContactRoute
+  '/v3/goals': typeof V3GoalsRoute
+  '/v3/insights': typeof V3InsightsRoute
+  '/v3/process': typeof V3ProcessRoute
+  '/v3/results': typeof V3ResultsRoute
+  '/v3/solutions': typeof V3SolutionsRoute
   '/trust': typeof TrustIndexRoute
+  '/v2': typeof V2IndexRoute
+  '/v3': typeof V3IndexRoute
+  '/v2/trust/author-rights': typeof V2TrustAuthorRightsRoute
+  '/v2/trust/ethical-marketing': typeof V2TrustEthicalMarketingRoute
+  '/v2/trust/guarantees': typeof V2TrustGuaranteesRoute
+  '/v2/trust/pricing': typeof V2TrustPricingRoute
+  '/v2/trust/results': typeof V2TrustResultsRoute
+  '/v3/trust/author-rights': typeof V3TrustAuthorRightsRoute
+  '/v3/trust/ethical-marketing': typeof V3TrustEthicalMarketingRoute
+  '/v3/trust/guarantees': typeof V3TrustGuaranteesRoute
+  '/v3/trust/pricing': typeof V3TrustPricingRoute
+  '/v3/trust/results': typeof V3TrustResultsRoute
+  '/v2/trust': typeof V2TrustIndexRoute
+  '/v3/trust': typeof V3TrustIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -154,12 +422,46 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/solutions': typeof SolutionsRoute
   '/trust': typeof TrustRouteWithChildren
+  '/v2': typeof V2RouteWithChildren
+  '/v3': typeof V3RouteWithChildren
   '/trust/author-rights': typeof TrustAuthorRightsRoute
   '/trust/ethical-marketing': typeof TrustEthicalMarketingRoute
   '/trust/guarantees': typeof TrustGuaranteesRoute
   '/trust/pricing': typeof TrustPricingRoute
   '/trust/results': typeof TrustResultsRoute
+  '/v2/about': typeof V2AboutRoute
+  '/v2/assessment': typeof V2AssessmentRoute
+  '/v2/contact': typeof V2ContactRoute
+  '/v2/goals': typeof V2GoalsRoute
+  '/v2/insights': typeof V2InsightsRoute
+  '/v2/process': typeof V2ProcessRoute
+  '/v2/results': typeof V2ResultsRoute
+  '/v2/solutions': typeof V2SolutionsRoute
+  '/v2/trust': typeof V2TrustRouteWithChildren
+  '/v3/about': typeof V3AboutRoute
+  '/v3/assessment': typeof V3AssessmentRoute
+  '/v3/contact': typeof V3ContactRoute
+  '/v3/goals': typeof V3GoalsRoute
+  '/v3/insights': typeof V3InsightsRoute
+  '/v3/process': typeof V3ProcessRoute
+  '/v3/results': typeof V3ResultsRoute
+  '/v3/solutions': typeof V3SolutionsRoute
+  '/v3/trust': typeof V3TrustRouteWithChildren
   '/trust/': typeof TrustIndexRoute
+  '/v2/': typeof V2IndexRoute
+  '/v3/': typeof V3IndexRoute
+  '/v2/trust/author-rights': typeof V2TrustAuthorRightsRoute
+  '/v2/trust/ethical-marketing': typeof V2TrustEthicalMarketingRoute
+  '/v2/trust/guarantees': typeof V2TrustGuaranteesRoute
+  '/v2/trust/pricing': typeof V2TrustPricingRoute
+  '/v2/trust/results': typeof V2TrustResultsRoute
+  '/v3/trust/author-rights': typeof V3TrustAuthorRightsRoute
+  '/v3/trust/ethical-marketing': typeof V3TrustEthicalMarketingRoute
+  '/v3/trust/guarantees': typeof V3TrustGuaranteesRoute
+  '/v3/trust/pricing': typeof V3TrustPricingRoute
+  '/v3/trust/results': typeof V3TrustResultsRoute
+  '/v2/trust/': typeof V2TrustIndexRoute
+  '/v3/trust/': typeof V3TrustIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -174,12 +476,46 @@ export interface FileRouteTypes {
     | '/results'
     | '/solutions'
     | '/trust'
+    | '/v2'
+    | '/v3'
     | '/trust/author-rights'
     | '/trust/ethical-marketing'
     | '/trust/guarantees'
     | '/trust/pricing'
     | '/trust/results'
+    | '/v2/about'
+    | '/v2/assessment'
+    | '/v2/contact'
+    | '/v2/goals'
+    | '/v2/insights'
+    | '/v2/process'
+    | '/v2/results'
+    | '/v2/solutions'
+    | '/v2/trust'
+    | '/v3/about'
+    | '/v3/assessment'
+    | '/v3/contact'
+    | '/v3/goals'
+    | '/v3/insights'
+    | '/v3/process'
+    | '/v3/results'
+    | '/v3/solutions'
+    | '/v3/trust'
     | '/trust/'
+    | '/v2/'
+    | '/v3/'
+    | '/v2/trust/author-rights'
+    | '/v2/trust/ethical-marketing'
+    | '/v2/trust/guarantees'
+    | '/v2/trust/pricing'
+    | '/v2/trust/results'
+    | '/v3/trust/author-rights'
+    | '/v3/trust/ethical-marketing'
+    | '/v3/trust/guarantees'
+    | '/v3/trust/pricing'
+    | '/v3/trust/results'
+    | '/v2/trust/'
+    | '/v3/trust/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -196,7 +532,37 @@ export interface FileRouteTypes {
     | '/trust/guarantees'
     | '/trust/pricing'
     | '/trust/results'
+    | '/v2/about'
+    | '/v2/assessment'
+    | '/v2/contact'
+    | '/v2/goals'
+    | '/v2/insights'
+    | '/v2/process'
+    | '/v2/results'
+    | '/v2/solutions'
+    | '/v3/about'
+    | '/v3/assessment'
+    | '/v3/contact'
+    | '/v3/goals'
+    | '/v3/insights'
+    | '/v3/process'
+    | '/v3/results'
+    | '/v3/solutions'
     | '/trust'
+    | '/v2'
+    | '/v3'
+    | '/v2/trust/author-rights'
+    | '/v2/trust/ethical-marketing'
+    | '/v2/trust/guarantees'
+    | '/v2/trust/pricing'
+    | '/v2/trust/results'
+    | '/v3/trust/author-rights'
+    | '/v3/trust/ethical-marketing'
+    | '/v3/trust/guarantees'
+    | '/v3/trust/pricing'
+    | '/v3/trust/results'
+    | '/v2/trust'
+    | '/v3/trust'
   id:
     | '__root__'
     | '/'
@@ -209,12 +575,46 @@ export interface FileRouteTypes {
     | '/results'
     | '/solutions'
     | '/trust'
+    | '/v2'
+    | '/v3'
     | '/trust/author-rights'
     | '/trust/ethical-marketing'
     | '/trust/guarantees'
     | '/trust/pricing'
     | '/trust/results'
+    | '/v2/about'
+    | '/v2/assessment'
+    | '/v2/contact'
+    | '/v2/goals'
+    | '/v2/insights'
+    | '/v2/process'
+    | '/v2/results'
+    | '/v2/solutions'
+    | '/v2/trust'
+    | '/v3/about'
+    | '/v3/assessment'
+    | '/v3/contact'
+    | '/v3/goals'
+    | '/v3/insights'
+    | '/v3/process'
+    | '/v3/results'
+    | '/v3/solutions'
+    | '/v3/trust'
     | '/trust/'
+    | '/v2/'
+    | '/v3/'
+    | '/v2/trust/author-rights'
+    | '/v2/trust/ethical-marketing'
+    | '/v2/trust/guarantees'
+    | '/v2/trust/pricing'
+    | '/v2/trust/results'
+    | '/v3/trust/author-rights'
+    | '/v3/trust/ethical-marketing'
+    | '/v3/trust/guarantees'
+    | '/v3/trust/pricing'
+    | '/v3/trust/results'
+    | '/v2/trust/'
+    | '/v3/trust/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -228,10 +628,26 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   SolutionsRoute: typeof SolutionsRoute
   TrustRoute: typeof TrustRouteWithChildren
+  V2Route: typeof V2RouteWithChildren
+  V3Route: typeof V3RouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/v3': {
+      id: '/v3'
+      path: '/v3'
+      fullPath: '/v3'
+      preLoaderRoute: typeof V3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/v2': {
+      id: '/v2'
+      path: '/v2'
+      fullPath: '/v2'
+      preLoaderRoute: typeof V2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trust': {
       id: '/trust'
       path: '/trust'
@@ -302,12 +718,152 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/v3/': {
+      id: '/v3/'
+      path: '/'
+      fullPath: '/v3/'
+      preLoaderRoute: typeof V3IndexRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v2/': {
+      id: '/v2/'
+      path: '/'
+      fullPath: '/v2/'
+      preLoaderRoute: typeof V2IndexRouteImport
+      parentRoute: typeof V2Route
+    }
     '/trust/': {
       id: '/trust/'
       path: '/'
       fullPath: '/trust/'
       preLoaderRoute: typeof TrustIndexRouteImport
       parentRoute: typeof TrustRoute
+    }
+    '/v3/trust': {
+      id: '/v3/trust'
+      path: '/trust'
+      fullPath: '/v3/trust'
+      preLoaderRoute: typeof V3TrustRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/solutions': {
+      id: '/v3/solutions'
+      path: '/solutions'
+      fullPath: '/v3/solutions'
+      preLoaderRoute: typeof V3SolutionsRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/results': {
+      id: '/v3/results'
+      path: '/results'
+      fullPath: '/v3/results'
+      preLoaderRoute: typeof V3ResultsRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/process': {
+      id: '/v3/process'
+      path: '/process'
+      fullPath: '/v3/process'
+      preLoaderRoute: typeof V3ProcessRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/insights': {
+      id: '/v3/insights'
+      path: '/insights'
+      fullPath: '/v3/insights'
+      preLoaderRoute: typeof V3InsightsRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/goals': {
+      id: '/v3/goals'
+      path: '/goals'
+      fullPath: '/v3/goals'
+      preLoaderRoute: typeof V3GoalsRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/contact': {
+      id: '/v3/contact'
+      path: '/contact'
+      fullPath: '/v3/contact'
+      preLoaderRoute: typeof V3ContactRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/assessment': {
+      id: '/v3/assessment'
+      path: '/assessment'
+      fullPath: '/v3/assessment'
+      preLoaderRoute: typeof V3AssessmentRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v3/about': {
+      id: '/v3/about'
+      path: '/about'
+      fullPath: '/v3/about'
+      preLoaderRoute: typeof V3AboutRouteImport
+      parentRoute: typeof V3Route
+    }
+    '/v2/trust': {
+      id: '/v2/trust'
+      path: '/trust'
+      fullPath: '/v2/trust'
+      preLoaderRoute: typeof V2TrustRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/solutions': {
+      id: '/v2/solutions'
+      path: '/solutions'
+      fullPath: '/v2/solutions'
+      preLoaderRoute: typeof V2SolutionsRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/results': {
+      id: '/v2/results'
+      path: '/results'
+      fullPath: '/v2/results'
+      preLoaderRoute: typeof V2ResultsRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/process': {
+      id: '/v2/process'
+      path: '/process'
+      fullPath: '/v2/process'
+      preLoaderRoute: typeof V2ProcessRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/insights': {
+      id: '/v2/insights'
+      path: '/insights'
+      fullPath: '/v2/insights'
+      preLoaderRoute: typeof V2InsightsRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/goals': {
+      id: '/v2/goals'
+      path: '/goals'
+      fullPath: '/v2/goals'
+      preLoaderRoute: typeof V2GoalsRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/contact': {
+      id: '/v2/contact'
+      path: '/contact'
+      fullPath: '/v2/contact'
+      preLoaderRoute: typeof V2ContactRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/assessment': {
+      id: '/v2/assessment'
+      path: '/assessment'
+      fullPath: '/v2/assessment'
+      preLoaderRoute: typeof V2AssessmentRouteImport
+      parentRoute: typeof V2Route
+    }
+    '/v2/about': {
+      id: '/v2/about'
+      path: '/about'
+      fullPath: '/v2/about'
+      preLoaderRoute: typeof V2AboutRouteImport
+      parentRoute: typeof V2Route
     }
     '/trust/results': {
       id: '/trust/results'
@@ -344,6 +900,90 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrustAuthorRightsRouteImport
       parentRoute: typeof TrustRoute
     }
+    '/v3/trust/': {
+      id: '/v3/trust/'
+      path: '/'
+      fullPath: '/v3/trust/'
+      preLoaderRoute: typeof V3TrustIndexRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v2/trust/': {
+      id: '/v2/trust/'
+      path: '/'
+      fullPath: '/v2/trust/'
+      preLoaderRoute: typeof V2TrustIndexRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
+    '/v3/trust/results': {
+      id: '/v3/trust/results'
+      path: '/results'
+      fullPath: '/v3/trust/results'
+      preLoaderRoute: typeof V3TrustResultsRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v3/trust/pricing': {
+      id: '/v3/trust/pricing'
+      path: '/pricing'
+      fullPath: '/v3/trust/pricing'
+      preLoaderRoute: typeof V3TrustPricingRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v3/trust/guarantees': {
+      id: '/v3/trust/guarantees'
+      path: '/guarantees'
+      fullPath: '/v3/trust/guarantees'
+      preLoaderRoute: typeof V3TrustGuaranteesRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v3/trust/ethical-marketing': {
+      id: '/v3/trust/ethical-marketing'
+      path: '/ethical-marketing'
+      fullPath: '/v3/trust/ethical-marketing'
+      preLoaderRoute: typeof V3TrustEthicalMarketingRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v3/trust/author-rights': {
+      id: '/v3/trust/author-rights'
+      path: '/author-rights'
+      fullPath: '/v3/trust/author-rights'
+      preLoaderRoute: typeof V3TrustAuthorRightsRouteImport
+      parentRoute: typeof V3TrustRoute
+    }
+    '/v2/trust/results': {
+      id: '/v2/trust/results'
+      path: '/results'
+      fullPath: '/v2/trust/results'
+      preLoaderRoute: typeof V2TrustResultsRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
+    '/v2/trust/pricing': {
+      id: '/v2/trust/pricing'
+      path: '/pricing'
+      fullPath: '/v2/trust/pricing'
+      preLoaderRoute: typeof V2TrustPricingRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
+    '/v2/trust/guarantees': {
+      id: '/v2/trust/guarantees'
+      path: '/guarantees'
+      fullPath: '/v2/trust/guarantees'
+      preLoaderRoute: typeof V2TrustGuaranteesRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
+    '/v2/trust/ethical-marketing': {
+      id: '/v2/trust/ethical-marketing'
+      path: '/ethical-marketing'
+      fullPath: '/v2/trust/ethical-marketing'
+      preLoaderRoute: typeof V2TrustEthicalMarketingRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
+    '/v2/trust/author-rights': {
+      id: '/v2/trust/author-rights'
+      path: '/author-rights'
+      fullPath: '/v2/trust/author-rights'
+      preLoaderRoute: typeof V2TrustAuthorRightsRouteImport
+      parentRoute: typeof V2TrustRoute
+    }
   }
 }
 
@@ -367,6 +1007,104 @@ const TrustRouteChildren: TrustRouteChildren = {
 
 const TrustRouteWithChildren = TrustRoute._addFileChildren(TrustRouteChildren)
 
+interface V2TrustRouteChildren {
+  V2TrustAuthorRightsRoute: typeof V2TrustAuthorRightsRoute
+  V2TrustEthicalMarketingRoute: typeof V2TrustEthicalMarketingRoute
+  V2TrustGuaranteesRoute: typeof V2TrustGuaranteesRoute
+  V2TrustPricingRoute: typeof V2TrustPricingRoute
+  V2TrustResultsRoute: typeof V2TrustResultsRoute
+  V2TrustIndexRoute: typeof V2TrustIndexRoute
+}
+
+const V2TrustRouteChildren: V2TrustRouteChildren = {
+  V2TrustAuthorRightsRoute: V2TrustAuthorRightsRoute,
+  V2TrustEthicalMarketingRoute: V2TrustEthicalMarketingRoute,
+  V2TrustGuaranteesRoute: V2TrustGuaranteesRoute,
+  V2TrustPricingRoute: V2TrustPricingRoute,
+  V2TrustResultsRoute: V2TrustResultsRoute,
+  V2TrustIndexRoute: V2TrustIndexRoute,
+}
+
+const V2TrustRouteWithChildren =
+  V2TrustRoute._addFileChildren(V2TrustRouteChildren)
+
+interface V2RouteChildren {
+  V2AboutRoute: typeof V2AboutRoute
+  V2AssessmentRoute: typeof V2AssessmentRoute
+  V2ContactRoute: typeof V2ContactRoute
+  V2GoalsRoute: typeof V2GoalsRoute
+  V2InsightsRoute: typeof V2InsightsRoute
+  V2ProcessRoute: typeof V2ProcessRoute
+  V2ResultsRoute: typeof V2ResultsRoute
+  V2SolutionsRoute: typeof V2SolutionsRoute
+  V2TrustRoute: typeof V2TrustRouteWithChildren
+  V2IndexRoute: typeof V2IndexRoute
+}
+
+const V2RouteChildren: V2RouteChildren = {
+  V2AboutRoute: V2AboutRoute,
+  V2AssessmentRoute: V2AssessmentRoute,
+  V2ContactRoute: V2ContactRoute,
+  V2GoalsRoute: V2GoalsRoute,
+  V2InsightsRoute: V2InsightsRoute,
+  V2ProcessRoute: V2ProcessRoute,
+  V2ResultsRoute: V2ResultsRoute,
+  V2SolutionsRoute: V2SolutionsRoute,
+  V2TrustRoute: V2TrustRouteWithChildren,
+  V2IndexRoute: V2IndexRoute,
+}
+
+const V2RouteWithChildren = V2Route._addFileChildren(V2RouteChildren)
+
+interface V3TrustRouteChildren {
+  V3TrustAuthorRightsRoute: typeof V3TrustAuthorRightsRoute
+  V3TrustEthicalMarketingRoute: typeof V3TrustEthicalMarketingRoute
+  V3TrustGuaranteesRoute: typeof V3TrustGuaranteesRoute
+  V3TrustPricingRoute: typeof V3TrustPricingRoute
+  V3TrustResultsRoute: typeof V3TrustResultsRoute
+  V3TrustIndexRoute: typeof V3TrustIndexRoute
+}
+
+const V3TrustRouteChildren: V3TrustRouteChildren = {
+  V3TrustAuthorRightsRoute: V3TrustAuthorRightsRoute,
+  V3TrustEthicalMarketingRoute: V3TrustEthicalMarketingRoute,
+  V3TrustGuaranteesRoute: V3TrustGuaranteesRoute,
+  V3TrustPricingRoute: V3TrustPricingRoute,
+  V3TrustResultsRoute: V3TrustResultsRoute,
+  V3TrustIndexRoute: V3TrustIndexRoute,
+}
+
+const V3TrustRouteWithChildren =
+  V3TrustRoute._addFileChildren(V3TrustRouteChildren)
+
+interface V3RouteChildren {
+  V3AboutRoute: typeof V3AboutRoute
+  V3AssessmentRoute: typeof V3AssessmentRoute
+  V3ContactRoute: typeof V3ContactRoute
+  V3GoalsRoute: typeof V3GoalsRoute
+  V3InsightsRoute: typeof V3InsightsRoute
+  V3ProcessRoute: typeof V3ProcessRoute
+  V3ResultsRoute: typeof V3ResultsRoute
+  V3SolutionsRoute: typeof V3SolutionsRoute
+  V3TrustRoute: typeof V3TrustRouteWithChildren
+  V3IndexRoute: typeof V3IndexRoute
+}
+
+const V3RouteChildren: V3RouteChildren = {
+  V3AboutRoute: V3AboutRoute,
+  V3AssessmentRoute: V3AssessmentRoute,
+  V3ContactRoute: V3ContactRoute,
+  V3GoalsRoute: V3GoalsRoute,
+  V3InsightsRoute: V3InsightsRoute,
+  V3ProcessRoute: V3ProcessRoute,
+  V3ResultsRoute: V3ResultsRoute,
+  V3SolutionsRoute: V3SolutionsRoute,
+  V3TrustRoute: V3TrustRouteWithChildren,
+  V3IndexRoute: V3IndexRoute,
+}
+
+const V3RouteWithChildren = V3Route._addFileChildren(V3RouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -378,6 +1116,8 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   SolutionsRoute: SolutionsRoute,
   TrustRoute: TrustRouteWithChildren,
+  V2Route: V2RouteWithChildren,
+  V3Route: V3RouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
