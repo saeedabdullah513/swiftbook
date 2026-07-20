@@ -42,7 +42,7 @@ function About() {
             <p><span className="eyebrow !text-ink/55">Phone</span><br /><a href="tel:+13322587478" className="text-navy">+1&nbsp;332&nbsp;258&nbsp;7478</a></p>
             <p><span className="eyebrow !text-ink/55">Serving</span><br />US-based fiction, nonfiction, memoir, business, academic, and children's authors.</p>
           </div>
-          <Link to="/assessment" className="mt-8 inline-flex items-center gap-2 rounded-sm bg-navy px-5 py-3 text-sm text-parchment hover:bg-navy-soft">
+          <Link to="/assessment" className="mt-8 inline-flex items-center gap-2 rounded-[6px] bg-brass px-5 py-3 text-sm text-white hover:bg-[var(--orange-hover)]">
             Request a Book Assessment <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

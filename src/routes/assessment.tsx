@@ -70,7 +70,7 @@ function Assessment() {
                   <span
                     className={`mt-0.5 h-6 w-6 rounded-full border flex items-center justify-center text-[11px] font-mono ${
                       i < step
-                        ? "bg-navy text-parchment border-navy"
+                        ? "bg-navy text-white border-navy"
                         : i === step
                           ? "border-brass text-brass"
                           : "border-warm-gray text-ink/50"
@@ -122,14 +122,14 @@ function Assessment() {
                 {step < steps.length - 1 ? (
                   <button
                     onClick={next}
-                    className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-3 text-sm text-parchment hover:bg-navy-soft"
+                    className="inline-flex items-center gap-2 rounded-[6px] bg-brass px-6 py-3 text-sm text-white hover:bg-[var(--orange-hover)]"
                   >
                     Continue <ArrowRight className="h-4 w-4" />
                   </button>
                 ) : (
                   <button
                     onClick={() => setDone(true)}
-                    className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-3 text-sm text-parchment hover:bg-navy-soft"
+                    className="inline-flex items-center gap-2 rounded-[6px] bg-brass px-6 py-3 text-sm text-white hover:bg-[var(--orange-hover)]"
                   >
                     Submit Assessment <Check className="h-4 w-4" />
                   </button>
@@ -306,7 +306,7 @@ function StepObjective({ form, update }: { form: FormState; update: (k: string, 
               key={o}
               onClick={() => toggle(o)}
               className={`text-left rounded-sm border px-4 py-4 text-sm flex items-center justify-between ${
-                on ? "border-navy bg-navy text-parchment" : "border-warm-gray hover:border-navy"
+                on ? "border-navy bg-navy text-white" : "border-navy/20 hover:border-navy"
               }`}
             >
               {o}
@@ -402,7 +402,7 @@ function ConfirmationScreen({ form }: { form: FormState }) {
   return (
     <div className="mt-16 max-w-2xl">
       <div className="rounded-sm border border-warm-gray bg-card p-10 text-center">
-        <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-navy text-parchment">
+        <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-brass text-white">
           <Check className="h-6 w-6" />
         </div>
         <h2 className="mt-6 font-serif text-4xl text-navy">

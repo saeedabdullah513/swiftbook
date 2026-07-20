@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { BrandWatermark } from "./BrandWatermark";
 import commerceImg from "@/assets/tinuiti/Homepage_Commerce_Service-Card.webp";
 import socialImg from "@/assets/tinuiti/Homepage_Social_Service-Card.webp";
 import tvAdImg from "@/assets/tinuiti/Homepage_TV-Audio-Display_Service-Card.webp";
@@ -112,7 +113,12 @@ export function ConnectedServices() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-12 lg:py-32 bg-white">
+    <section ref={sectionRef} className="py-12 lg:py-32 bg-white relative">
+      <BrandWatermark
+        className="-right-20 top-12 h-[240px] w-auto translate-x-[20%]"
+        opacity={0.04}
+        variant="navy"
+      />
       <div className="container-editorial">
         {/* Header — elegant, centered */}
         <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-20">
@@ -121,7 +127,7 @@ export function ConnectedServices() {
             <span className="eyebrow">Connected Services</span>
             <span className="rule" />
           </div>
-          <h2 className="mt-5 font-serif text-4xl lg:text-5xl text-navy leading-tight">
+          <h2 className="mt-5 font-serif text-3xl lg:text-4xl text-navy leading-tight">
             Every channel,{" "}
             <em className="italic text-brass">one strategy.</em>
           </h2>
@@ -132,7 +138,7 @@ export function ConnectedServices() {
           </p>
           <a
             href="/solutions"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-navy text-white px-6 py-3.5 text-sm font-semibold hover:bg-navy-soft transition"
+            className="mt-6 inline-flex items-center gap-2 rounded-[6px] bg-brass text-white px-6 py-3.5 text-sm font-semibold hover:bg-[var(--orange-hover)] transition"
           >
             View all services
             <ArrowRight className="h-4 w-4" />
@@ -253,7 +259,7 @@ function ServiceCard({
           card.featured ? "opacity-20" : "opacity-0 group-hover:opacity-100"
         } transition-opacity duration-500`}
         style={{
-          background: `linear-gradient(135deg, transparent 50%, ${card.featured ? "#fc6e06" : "#001d43"}15 100%)`,
+          background: `linear-gradient(135deg, transparent 50%, ${card.featured ? "#fc6e06" : "#001d43"}20 100%)`,
         }}
       />
     </article>

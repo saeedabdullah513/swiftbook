@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
+import { BrandWatermark } from "./BrandWatermark";
 
 const cols = [
   {
@@ -34,19 +35,23 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="mt-32 border-t border-warm-gray bg-stone/50">
-      <div className="container-editorial py-16 grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
+    <footer className="relative mt-32 overflow-hidden border-t border-white/10 bg-navy text-white">
+      <BrandWatermark
+        className="-right-16 bottom-0 h-[280px] w-auto translate-x-[20%] translate-y-[30%]"
+        opacity={0.06}
+      />
+      <div className="container-editorial relative z-10 py-16 grid gap-12 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <Logo className="h-10 w-auto" />
-          <p className="mt-6 max-w-sm text-sm text-ink/70 leading-relaxed">
+          <Logo variant="white" className="h-10 w-auto" />
+          <p className="mt-6 max-w-sm text-sm text-white/72 leading-relaxed">
             A strategic book marketing partner. We assess your book, audience, and
             objectives before recommending a campaign.
           </p>
-          <div className="mt-6 text-sm text-ink/70 space-y-1">
+          <div className="mt-6 text-sm text-white/72 space-y-1">
             <p>5720 Lyndon B Johnson Fwy</p>
             <p>Dallas, TX 75230, United States</p>
             <p className="pt-2">
-              <a href="tel:+13322587478" className="hover:text-navy">
+              <a href="tel:+13322587478" className="hover:text-brass transition-colors">
                 +1&nbsp;332&nbsp;258&nbsp;7478
               </a>
             </p>
@@ -58,7 +63,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="text-sm text-ink/80 hover:text-navy">
+                  <Link to={l.to} className="text-sm text-white/80 hover:text-brass transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -67,8 +72,8 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-warm-gray">
-        <div className="container-editorial py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink/60">
+      <div className="relative z-10 border-t border-white/10">
+        <div className="container-editorial py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>© {new Date().getFullYear()} Swift Book Marketing. All rights reserved.</p>
           <p>No bestseller promises. Every campaign is built around your book.</p>
         </div>

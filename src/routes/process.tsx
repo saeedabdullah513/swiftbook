@@ -46,7 +46,7 @@ function Process() {
           ))}
         </div>
         <div className="mt-14">
-          <Link to="/assessment" className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-4 text-sm text-parchment hover:bg-navy-soft">
+          <Link to="/assessment" className="inline-flex items-center gap-2 rounded-[6px] bg-brass px-6 py-4 text-sm text-white hover:bg-[var(--orange-hover)]">
             Start with a book assessment <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

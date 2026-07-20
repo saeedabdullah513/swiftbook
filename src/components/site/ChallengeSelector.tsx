@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { BrandWatermark } from "./BrandWatermark";
 import buyerB from "@/assets/ironpaper/buyer b.webp";
 import buyer from "@/assets/ironpaper/buyer.webp";
 import attentionB from "@/assets/ironpaper/attention b.webp";
@@ -111,6 +112,11 @@ export function ChallengeSelector() {
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden bg-white" id="challenges">
+      <BrandWatermark
+        className="-left-16 top-16 h-[200px] w-auto -translate-x-[15%]"
+        opacity={0.04}
+        variant="navy"
+      />
 
       <div className="container-editorial relative z-10">
         {step === 1 ? (
@@ -143,7 +149,7 @@ function StepOne({
       : null;
 
   return (
-    <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
+    <div className="flex flex-col lg:flex-row gap-14 lg:gap-30">
       {/* Left text column */}
       <div className="flex-shrink-0 lg:w-[320px]">
         <div className="flex items-center gap-3">
@@ -210,7 +216,7 @@ function StepOne({
             onClick={handleNext}
             disabled={selected.length === 0}
             className="inline-flex items-center gap-2 rounded-xl px-7 py-4 text-sm font-semibold text-white shadow-lg transition disabled:opacity-30 disabled:cursor-not-allowed"
-            style={{ background: "linear-gradient(135deg, #fc6e06, #fd9844)" }}
+            style={{ background: "linear-gradient(135deg, #fc6e06, #e05f00)" }}
           >
             See how we can help
             <ArrowRight className="h-4 w-4" />
@@ -237,7 +243,7 @@ function FlipCard({
   onLeave: () => void;
 }) {
   const selectedGradient =
-    "linear-gradient(white, white), linear-gradient(135deg, #fc6e06 0%, #fd9844 100%)";
+    "linear-gradient(white, white), linear-gradient(135deg, #fc6e06 0%, #e05f00 100%)";
 
   return (
     <button
@@ -388,7 +394,7 @@ function StepTwo({
               className="w-full rounded-lg border border-warm-gray bg-parchment px-4 py-3 text-sm text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-brass/40 focus:border-brass transition" />
             <button type="submit"
               className="w-full inline-flex items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:opacity-95"
-              style={{ background: "linear-gradient(135deg, #fc6e06, #fd9844)" }}>
+              style={{ background: "linear-gradient(135deg, #fc6e06, #e05f00)" }}>
               Get my custom plan
               <ArrowRight className="h-4 w-4" />
             </button>

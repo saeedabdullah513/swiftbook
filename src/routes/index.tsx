@@ -27,6 +27,7 @@ import { Footer } from "@/components/site/Footer";
 import { ChallengeSelector } from "@/components/site/ChallengeSelector";
 import { ConnectedServices } from "@/components/site/ConnectedServices";
 import { Process } from "@/components/site/Process";
+import { BrandWatermark } from "@/components/site/BrandWatermark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,7 +57,6 @@ function Home() {
       <ChallengeSelector />
       <Story />
       <ConnectedServices />
-      <Services />
       <StatsCTA />
       <Portfolio />
       <Process />
@@ -113,12 +113,12 @@ function Hero() {
       className="relative overflow-hidden bg-ink text-parchment isolate"
       style={{ minHeight: "min(100vh, 900px)" }}
     >
-      {/* Deep cosmos gradient base */}
+      {/* Deep navy gradient base */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(1200px 800px at 20% 15%, oklch(0.42 0.18 262 / 0.85), transparent 55%), radial-gradient(900px 700px at 85% 20%, oklch(0.55 0.22 35 / 0.55), transparent 55%), radial-gradient(1100px 900px at 60% 110%, oklch(0.66 0.17 245 / 0.5), transparent 60%), linear-gradient(180deg, oklch(0.16 0.05 262), oklch(0.22 0.08 262))",
+            "radial-gradient(1200px 800px at 20% 15%, rgba(10,42,88,0.95), transparent 55%), radial-gradient(900px 700px at 85% 20%, rgba(252,110,6,0.22), transparent 55%), radial-gradient(1100px 900px at 60% 110%, rgba(0,29,67,0.9), transparent 60%), linear-gradient(180deg, #001d43, #0a2a58)",
         }}
       />
 
@@ -127,7 +127,7 @@ function Hero() {
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
           opacity: mouseInside ? 1 : 0.6,
-          background: `radial-gradient(450px 450px at ${spot.x}% ${spot.y}%, oklch(0.86 0.17 90 / 0.22), transparent 70%)`,
+          background: `radial-gradient(450px 450px at ${spot.x}% ${spot.y}%, rgba(252,110,6,0.18), transparent 70%)`,
         }}
       />
 
@@ -136,7 +136,7 @@ function Hero() {
         className="absolute inset-0 opacity-[0.18] animate-grid"
         style={{
           backgroundImage:
-            "linear-gradient(oklch(0.86 0.17 90 / 0.35) 1px, transparent 1px), linear-gradient(90deg, oklch(0.86 0.17 90 / 0.35) 1px, transparent 1px)",
+            "linear-gradient(rgba(252,110,6,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(252,110,6,0.28) 1px, transparent 1px)",
           backgroundSize: "80px 80px, 80px 80px",
           maskImage:
             "radial-gradient(ellipse 90% 70% at 50% 60%, black 30%, transparent 75%)",
@@ -150,13 +150,13 @@ function Hero() {
       <div className="absolute top-1/2 right-[-8%] -translate-y-1/2 pointer-events-none hidden md:block" style={layer(-20)}>
         <div className="relative h-[560px] w-[560px]">
           <div className="absolute inset-0 rounded-full border border-sunshine/25 animate-orbit">
-            <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-sunshine shadow-[0_0_20px_oklch(0.86_0.17_90)]" />
+            <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-brass shadow-[0_0_20px_rgba(252,110,6,0.7)]" />
           </div>
           <div className="absolute inset-8 rounded-full border border-brass/30 animate-orbit-reverse">
-            <div className="absolute top-1/2 -right-1 h-2 w-2 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_18px_oklch(0.72_0.19_45)]" />
+            <div className="absolute top-1/2 -right-1 h-2 w-2 -translate-y-1/2 rounded-full bg-brass shadow-[0_0_18px_rgba(252,110,6,0.65)]" />
           </div>
-          <div className="absolute inset-20 rounded-full border border-sky/40 animate-orbit">
-            <div className="absolute -bottom-1 left-1/3 h-1.5 w-1.5 rounded-full bg-sky shadow-[0_0_16px_oklch(0.66_0.17_245)]" />
+          <div className="absolute inset-20 rounded-full border border-white/25 animate-orbit">
+            <div className="absolute -bottom-1 left-1/3 h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.45)]" />
           </div>
           <div className="absolute inset-0 m-auto h-40 w-40 rounded-full bg-brass/20 blur-3xl animate-glow" />
         </div>
@@ -202,14 +202,14 @@ function Hero() {
               Assessment-First Book Marketing
             </span>
           </div>
-          <h1 className="mt-6 text-[46px] sm:text-6xl lg:text-[80px] leading-[1.02] font-serif text-parchment">
+          <h1 className="mt-6 text-[32px] sm:text-4xl lg:text-[52px] leading-[1.02] font-serif text-parchment">
             The marketing team <br />
             your book{" "}
             <span className="relative inline-block align-baseline min-w-[3.5em]">
               {rotatingWords.map((w, i) => (
                 <span
                   key={w}
-                  className="absolute left-0 top-0 italic bg-gradient-to-r from-sunshine via-brass to-sunshine bg-clip-text text-transparent animate-word"
+                  className="absolute left-0 top-0 italic bg-gradient-to-r from-brass via-brass-soft to-brass bg-clip-text text-transparent animate-word"
                   style={{ animationDelay: `${i * 1.5}s` }}
                 >
                   {w}
@@ -242,7 +242,7 @@ function Hero() {
         </div>
 
         <div style={layer(10)} className="relative">
-          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-sunshine/30 via-brass/20 to-sky/30 blur-2xl animate-glow" />
+          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brass/30 via-brass/20 to-navy/30 blur-2xl animate-glow" />
           <LeadForm />
         </div>
       </div>
@@ -258,7 +258,7 @@ function HudCorner({ className = "" }: { className?: string }) {
     <div className={`absolute h-8 w-8 pointer-events-none ${className}`}>
       <span className="absolute top-0 left-0 h-full w-px bg-sunshine/60" />
       <span className="absolute top-0 left-0 h-px w-full bg-sunshine/60" />
-      <span className="absolute top-0 left-0 h-1.5 w-1.5 rounded-full bg-sunshine shadow-[0_0_10px_oklch(0.86_0.17_90)]" />
+      <span className="absolute top-0 left-0 h-1.5 w-1.5 rounded-full bg-brass shadow-[0_0_10px_rgba(252,110,6,0.7)]" />
     </div>
   );
 }
@@ -283,10 +283,10 @@ function FloatingBook({
 }) {
   const bg =
     tone === "warm"
-      ? "linear-gradient(135deg, oklch(0.72 0.19 45), oklch(0.55 0.19 30))"
+      ? "linear-gradient(135deg, #fc6e06, #e05f00)"
       : tone === "cool"
-        ? "linear-gradient(135deg, oklch(0.42 0.15 258), oklch(0.66 0.17 245))"
-        : "linear-gradient(135deg, oklch(0.86 0.17 90), oklch(0.72 0.19 55))";
+        ? "linear-gradient(135deg, #001d43, #0a2a58)"
+        : "linear-gradient(135deg, #fd8a33, #fc6e06)";
   return (
     <div
       className="w-28 h-40 md:w-36 md:h-52 rounded-md shadow-lift ring-1 ring-white/20 relative overflow-hidden backdrop-blur-sm"
@@ -381,7 +381,7 @@ function Field({
         type={type}
         required
         placeholder={placeholder}
-        className="mt-1 w-full rounded-lg border border-warm-gray bg-parchment px-4 py-3 text-sm text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-sky/60 focus:border-sky transition"
+        className="mt-1 w-full rounded-[6px] border-[1.5px] border-navy/20 bg-surface px-4 py-3 text-sm text-ink placeholder-ink/40 focus:outline-none focus:ring-2 focus:ring-brass/25 focus:border-brass transition"
       />
     </label>
   );
@@ -394,7 +394,7 @@ function SelectField({ label, options }: { label: string; options: string[] }) {
       </span>
       <select
         required
-        className="mt-1 w-full rounded-lg border border-warm-gray bg-parchment px-3 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-sky/60 focus:border-sky transition"
+        className="mt-1 w-full rounded-[6px] border-[1.5px] border-navy/20 bg-surface px-3 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brass/25 focus:border-brass transition"
       >
         <option value="">Select…</option>
         {options.map((o) => (
@@ -410,15 +410,20 @@ function Story() {
   const [playing, setPlaying] = useState(false);
   return (
     <section className="relative bg-stone/50">
+      <BrandWatermark
+        className="-left-20 top-12 h-[260px] w-auto -translate-x-[15%]"
+        opacity={0.04}
+        variant="navy"
+      />
       <div className="container-editorial py-24 lg:py-32 grid gap-14 lg:grid-cols-[1.1fr_1fr] items-center">
         <div>
           <div className="flex items-center gap-3">
             <span className="rule" />
             <span className="eyebrow">Our Story</span>
           </div>
-          <h2 className="mt-4 font-serif text-4xl lg:text-5xl text-navy">
+          <h2 className="mt-4 font-serif text-3xl lg:text-4xl text-navy">
             We exist because most authors are sold <em className="italic text-brass">packages</em>,
-            not <em className="italic text-sky">strategy</em>.
+            not <em className="not-italic text-brass">strategy</em>.
           </h2>
           <div className="mt-6 space-y-4 text-ink/80 max-w-xl leading-relaxed">
             <p>
@@ -496,29 +501,33 @@ function StatsCTA() {
   return (
     <section className="relative overflow-hidden bg-navy text-white">
       <div className="absolute inset-0 gradient-cool opacity-90" />
-      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,oklch(0.86_0.17_90/0.6),transparent_50%),radial-gradient(circle_at_80%_80%,oklch(0.72_0.19_45/0.55),transparent_55%)]" />
-      <div className="container-editorial relative py-20 lg:py-28 grid gap-12 lg:grid-cols-[1.3fr_1fr] items-center">
+      <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,rgba(252,110,6,0.35),transparent_50%),radial-gradient(circle_at_80%_80%,rgba(252,110,6,0.25),transparent_55%)]" />
+      <BrandWatermark
+        className="-right-24 top-1/2 h-[360px] w-auto -translate-y-1/2 translate-x-[25%]"
+        opacity={0.07}
+      />
+      <div className="container-editorial relative z-10 py-20 lg:py-28 grid gap-12 lg:grid-cols-[1.3fr_1fr] items-center">
         <div>
-          <h2 className="font-serif text-4xl lg:text-5xl text-white leading-tight">
+          <h2 className="font-serif text-3xl lg:text-4xl text-white leading-tight">
             Thousands of authors have already <br />
-            <em className="italic bg-gradient-to-r from-sunshine to-brass-soft bg-clip-text text-transparent">
+            <em className="not-italic bg-gradient-to-r from-brass to-brass-soft bg-clip-text text-transparent">
               trusted us with their book.
             </em>
           </h2>
-          <p className="mt-6 text-white/75 max-w-lg">
+          <p className="mt-6 text-white/72 max-w-lg">
             From debut novelists to New York Times–reviewed nonfiction authors,
             we build the marketing engine behind books that get read.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/assessment"
-              className="inline-flex items-center gap-2 rounded-xl bg-white text-navy px-6 py-4 text-sm font-semibold hover:bg-sunshine transition"
+              className="inline-flex items-center gap-2 rounded-[6px] bg-brass text-white px-6 py-4 text-sm font-semibold hover:bg-[var(--orange-hover)] hover:-translate-y-0.5 transition-all"
             >
               Request a free assessment <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+13322587478"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/40 px-6 py-4 text-sm font-medium text-white hover:bg-white/10 transition"
+              className="inline-flex items-center gap-2 rounded-[6px] border-[1.5px] border-white/50 px-6 py-4 text-sm font-medium text-white hover:bg-white/10 transition"
             >
               Call +1 332 258 7478
             </a>
@@ -528,12 +537,18 @@ function StatsCTA() {
           {stats.map(([n, l]) => (
             <div
               key={l}
-              className="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-6"
+              className="rounded-[10px] bg-navy-card/80 backdrop-blur border border-white/15 p-6"
             >
-              <div className="font-serif text-4xl lg:text-5xl bg-gradient-to-br from-white to-sunshine bg-clip-text text-transparent">
-                {n}
+              <div className="font-serif text-3xl lg:text-4xl text-white">
+                {n.split(/([+★])/).map((part, i) =>
+                  part === "+" || part === "★" ? (
+                    <span key={i} className="text-brass">{part}</span>
+                  ) : (
+                    <span key={i}>{part}</span>
+                  ),
+                )}
               </div>
-              <div className="mt-2 text-sm text-white/80">{l}</div>
+              <div className="mt-2 text-sm text-white/72">{l}</div>
             </div>
           ))}
         </div>
@@ -542,80 +557,9 @@ function StatsCTA() {
   );
 }
 
-/* ============ SERVICES ============ */
-const SERVICES_ITEMS = [
-  { icon: Search, title: "Amazon Marketing", tag: "Discoverability",
-    sub: ["Keyword & category research", "Metadata & A+ content", "Amazon Ads", "Retailer page conversion", "KDP Select strategy"] },
-  { icon: BookOpen, title: "Content Marketing", tag: "Authority",
-    sub: ["Author blog editorial calendar", "Long-form articles & essays", "Guest posting outreach", "Book excerpts & series", "SEO content strategy"] },
-  { icon: Mail, title: "Email Marketing", tag: "Engagement",
-    sub: ["List building & lead magnets", "Launch sequences", "Author newsletter design", "Segmentation & automation", "Cross-promo swaps"] },
-  { icon: Sparkles, title: "Featured Articles", tag: "Press",
-    sub: ["Editorial placements", "Contributed op-eds", "Niche publication features", "Interview coordination", "Byline management"] },
-  { icon: Megaphone, title: "Press Release", tag: "PR",
-    sub: ["Press release drafting", "Distribution to targeted lists", "Journalist outreach", "Launch news coverage", "Follow-up & tracking"] },
-  { icon: Users, title: "Social Media Marketing", tag: "Engagement",
-    sub: ["Content calendar & production", "Instagram, TikTok, Threads, X", "Community management", "Reels & short-form video", "Paid social campaigns"] },
-  { icon: Target, title: "Search Engine Optimization", tag: "Discoverability",
-    sub: ["Author website SEO", "Book landing page optimization", "Backlink strategy", "Local & branded search", "Technical audits"] },
-  { icon: Radio, title: "TV & Podcast Interviews", tag: "Authority",
-    sub: ["Broadcast & streaming pitches", "Podcast tour booking", "Media training", "Interview prep briefs", "Post-interview amplification"] },
-];
-
-function Services() {
-  const [open, setOpen] = useState<number | null>(0);
-  return (
-    <section className="bg-white border-y border-warm-gray">
-      <div className="container-editorial py-24 lg:py-32">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.6fr] items-end">
-          <div>
-            <div className="flex items-center gap-3"><span className="rule" /><span className="eyebrow">Services</span></div>
-            <h2 className="mt-4 font-serif text-4xl lg:text-5xl text-navy">
-              Everything your book needs, <em className="italic text-sky">under one roof.</em>
-            </h2>
-          </div>
-          <p className="text-ink/70 max-w-lg lg:justify-self-end">
-            Tap any service to see what is inside. Every campaign combines only what your book actually needs.
-          </p>
-        </div>
-        <div className="mt-14 grid gap-4 md:grid-cols-2">
-          {SERVICES_ITEMS.map((s, i) => {
-            const isOpen = open === i;
-            const cardBorder = isOpen ? "border-navy shadow-editorial bg-parchment" : "border-warm-gray bg-white hover:border-navy/40 hover:shadow-editorial";
-            const plusRotate = isOpen ? "rotate-45" : "";
-            const panelState = isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0";
-            return (
-              <button key={s.title} onClick={() => setOpen(isOpen ? null : i)}
-                className={"text-left rounded-2xl border transition-all overflow-hidden " + cardBorder}>
-                <div className="p-6 flex items-start gap-5">
-                  <div className="shrink-0 h-12 w-12 rounded-xl bg-gradient-to-br from-navy to-sky text-white flex items-center justify-center shadow">
-                    <s.icon className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1"><div className="flex items-center justify-between">
-                    <div><div className="text-[11px] uppercase tracking-widest text-brass">{s.tag}</div>
-                      <h3 className="mt-1 font-serif text-2xl text-navy">{s.title}</h3></div>
-                    <Plus className={"h-5 w-5 text-navy/60 transition-transform " + plusRotate} />
-                  </div></div>
-                </div>
-                <div className={"grid transition-[grid-template-rows,opacity] duration-500 " + panelState}>
-                  <div className="overflow-hidden"><div className="px-6 pb-6 pl-[4.75rem] grid sm:grid-cols-2 gap-y-2 gap-x-6 text-sm text-ink/80">
-                    {s.sub.map((it) => (<div key={it} className="flex items-start gap-2"><Check className="h-4 w-4 text-brass mt-0.5 shrink-0" /><span>{it}</span></div>))}
-                  </div></div>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
-
 /* ============ PORTFOLIO — Book covers grid with modal ============ */
-const BLUE = "linear-gradient(160deg,#001d43,#00347a,#001d43)";
-const ORANGE = "linear-gradient(160deg,#fc6e06,#fd9844,#b34d04)";
+const BLUE = "linear-gradient(160deg,#001d43,#0a2a58,#001d43)";
+const ORANGE = "linear-gradient(160deg,#fc6e06,#e05f00,#b34d04)";
 
 const BOOKS = [
   {
@@ -701,7 +645,7 @@ function Portfolio() {
             <span className="rule" />
             <span className="eyebrow">Portfolio</span>
           </div>
-          <h2 className="mt-4 font-serif text-4xl lg:text-5xl text-navy">
+          <h2 className="mt-4 font-serif text-3xl lg:text-4xl text-navy">
             Books we've helped <em className="italic text-brass">get read.</em>
           </h2>
         </div>
@@ -833,16 +777,21 @@ const REELS = [
 
 function reelBg(tone: "warm" | "cool" | "sun") {
   switch (tone) {
-    case "warm": return "linear-gradient(150deg, #fc6e06, #b34d04)";
-    case "cool": return "linear-gradient(150deg, #001d43, #00347a)";
-    case "sun":  return "linear-gradient(150deg, #fd9844, #fc6e06)";
+    case "warm": return "linear-gradient(150deg, #fc6e06, #e05f00)";
+    case "cool": return "linear-gradient(150deg, #001d43, #0a2a58)";
+    case "sun":  return "linear-gradient(150deg, #fd8a33, #fc6e06)";
   }
 }
 
 function TestimonialsReel() {
   const [open, setOpen] = useState(false);
   return (
-    <section className="bg-parchment py-24 lg:py-32">
+    <section className="bg-parchment py-24 lg:py-32 relative">
+      <BrandWatermark
+        className="-right-20 bottom-8 h-[240px] w-auto translate-x-[20%]"
+        opacity={0.04}
+        variant="navy"
+      />
       <div className="container-editorial">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -850,13 +799,13 @@ function TestimonialsReel() {
               <span className="rule" />
               <span className="eyebrow">Author Voices</span>
             </div>
-            <h2 className="mt-4 font-serif text-4xl lg:text-5xl text-navy">
-              Hear it from the <em className="italic text-sky">authors themselves.</em>
+            <h2 className="mt-4 font-serif text-3xl lg:text-4xl text-navy">
+              Hear it from the <em className="not-italic text-brass">authors themselves.</em>
             </h2>
           </div>
           <button
             onClick={() => setOpen(true)}
-            className="inline-flex items-center gap-2 rounded-xl bg-navy text-white px-5 py-3 text-sm font-medium hover:bg-navy-soft transition"
+              className="inline-flex items-center gap-2 rounded-[6px] bg-brass text-white px-5 py-3 text-sm font-medium hover:bg-[var(--orange-hover)] transition"
           >
             <Play className="h-4 w-4 fill-white" /> Play the reel
           </button>
@@ -1010,7 +959,12 @@ function FAQAndSocial() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#f6faff]">
+    <section className="py-24 lg:py-32 bg-surface relative">
+      <BrandWatermark
+        className="-left-16 top-16 h-[220px] w-auto -translate-x-[15%]"
+        opacity={0.04}
+        variant="navy"
+      />
       <div className="container-editorial">
         <div className="grid gap-7 lg:grid-cols-[1.12fr_0.88fr] items-start">
           {/* Left: FAQ Accordion */}
@@ -1020,9 +974,9 @@ function FAQAndSocial() {
                 <span className="rule" />
                 <span className="eyebrow">Frequently asked questions</span>
               </div>
-              <h2 className="mt-4 font-serif text-4xl lg:text-5xl text-navy max-w-xl">
+              <h2 className="mt-4 font-serif text-3xl lg:text-4xl text-navy max-w-xl">
                 Each answer includes a video{" "}
-                <em className="italic text-sky">and written transcript.</em>
+                <em className="not-italic text-brass">and written transcript.</em>
               </h2>
             </div>
 
@@ -1039,7 +993,7 @@ function FAQAndSocial() {
                       className="w-full flex items-center justify-between gap-4 text-left p-[22px] font-extrabold text-navy"
                     >
                       <span className="font-serif text-lg leading-tight">{f.q}</span>
-                      <span className="text-2xl text-navy/50 shrink-0 transition-transform duration-300"
+                      <span className="text-2xl text-brass shrink-0 transition-transform duration-300"
                         style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}>
                         +
                       </span>
@@ -1063,8 +1017,7 @@ function FAQAndSocial() {
                               <source src={f.video} type="video/mp4" />
                             </video>
                             {/* Transcript */}
-                            <div className="rounded-2xl p-4 border border-warm-gray"
-                              style={{ background: "linear-gradient(180deg, #f8fbff, #fff7ef)" }}>
+                            <div className="rounded-2xl p-4 border border-warm-gray bg-surface">
                               <strong className="block text-navy mb-2 font-semibold">Transcript</strong>
                               <p className="text-ink/60 text-sm leading-relaxed">{f.a}</p>
                             </div>
@@ -1080,11 +1033,10 @@ function FAQAndSocial() {
 
           {/* Right: Social Feed Sidebar */}
           <aside>
-            <div className="rounded-3xl p-[22px] border border-warm-gray shadow-editorial sticky top-28"
-              style={{ background: "linear-gradient(180deg, #fff, #fff8ef)" }}>
+            <div className="rounded-[10px] p-[22px] border border-warm-gray shadow-editorial sticky top-28 bg-white">
               <div className="mb-5">
                 <strong className="block text-navy text-xl font-serif">Social feed</strong>
-                <span className="block mt-1 text-sky font-bold text-sm">@swiftbookmarketing</span>
+                <span className="block mt-1 text-brass font-bold text-sm">@swiftbookmarketing</span>
               </div>
               <div className="space-y-3.5">
                 {SOCIAL_ITEMS.map((s) => (

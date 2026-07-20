@@ -44,7 +44,7 @@ function Contact() {
             <label className="eyebrow">What are you working on?</label>
             <textarea rows={5} className="mt-2 w-full rounded-sm border border-warm-gray bg-parchment px-4 py-3 text-sm focus:border-navy focus:outline-none" />
           </div>
-          <button type="button" className="w-full rounded-sm bg-navy px-6 py-3 text-sm text-parchment hover:bg-navy-soft">
+          <button type="button" className="w-full rounded-[6px] bg-brass px-6 py-3 text-sm text-white hover:bg-[var(--orange-hover)]">
             Send message
           </button>
           <p className="text-xs text-ink/55">

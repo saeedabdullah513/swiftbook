@@ -5,14 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
 
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Michroma", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Michroma", ui-sans-serif, system-ui, sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -34,74 +35,86 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* Brand aliases — keep existing class names working */
   --color-parchment: var(--parchment);
   --color-stone: var(--stone);
   --color-navy: var(--navy);
   --color-navy-soft: var(--navy-soft);
+  --color-navy-card: var(--navy-card);
   --color-brass: var(--brass);
   --color-brass-soft: var(--brass-soft);
+  --color-orange: var(--brass);
+  --color-orange-hover: var(--orange-hover);
   --color-sage: var(--sage);
   --color-ink: var(--ink);
   --color-warm-gray: var(--warm-gray);
   --color-sunshine: var(--sunshine);
   --color-sky: var(--sky);
   --color-sky-soft: var(--sky-soft);
+  --color-surface: var(--surface);
 
-  --shadow-editorial: 0 1px 2px rgba(0, 29, 67, 0.08), 0 16px 44px -18px rgba(0, 29, 67, 0.2);
-  --shadow-lift: 0 24px 60px -24px rgba(0, 29, 67, 0.25);
+  --shadow-editorial: 0 1px 2px rgba(0, 29, 67, 0.08), 0 16px 44px -18px rgba(0, 29, 67, 0.18);
+  --shadow-lift: 0 12px 32px -12px rgba(0, 29, 67, 0.22);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 8px;
 
-  /* Navy (#001d43) & Orange (#fc6e06) palette */
-  --parchment: oklch(0.985 0.005 90);        /* warm off-white */
-  --stone: oklch(0.96 0.01 85);              /* cream */
-  --navy: oklch(0.22 0.08 260);               /* #001d43 deep navy */
-  --navy-soft: oklch(0.32 0.10 258);          /* mid navy */
-  --sky: oklch(0.62 0.15 250);                /* accent blue */
-  --sky-soft: oklch(0.84 0.06 245);           /* pale blue */
-  --brass: oklch(0.68 0.21 45);               /* #fc6e06 vivid orange */
-  --brass-soft: oklch(0.80 0.16 55);          /* soft orange */
-  --sunshine: oklch(0.90 0.14 80);            /* warm golden */
-  --sage: oklch(0.55 0.02 155);
-  --ink: oklch(0.18 0.05 260);                /* dark navy text */
-  --warm-gray: oklch(0.89 0.01 85);
+  /* Official Swift Book Marketing palette */
+  --navy: #001d43;
+  --navy-soft: #0a2a58;
+  --navy-card: #0a2a58;
+  --brass: #fc6e06;
+  --brass-soft: #fd8a33;
+  --orange-hover: #e05f00;
+  --surface: #f5f7fa;
+  --parchment: #f5f7fa;
+  --stone: #f5f7fa;
+  --ink: #001d43;
+  --warm-gray: rgba(0, 29, 67, 0.14);
+  --sage: rgba(0, 29, 67, 0.55);
 
-  --background: var(--parchment);
+  /* Remap legacy accent names → brand orange / navy (no random colors) */
+  --sky: #fc6e06;
+  --sky-soft: rgba(252, 110, 6, 0.12);
+  --sunshine: #fc6e06;
+
+  --background: var(--surface);
   --foreground: var(--ink);
-  --card: oklch(1 0 0);
+  --card: #ffffff;
   --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
+  --popover: #ffffff;
   --popover-foreground: var(--ink);
-  --primary: var(--navy);
-  --primary-foreground: var(--parchment);
-  --secondary: var(--stone);
+  --primary: var(--brass);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface);
   --secondary-foreground: var(--navy);
-  --muted: var(--stone);
-  --muted-foreground: oklch(0.42 0.03 262);
+  --muted: var(--surface);
+  --muted-foreground: rgba(0, 29, 67, 0.64);
   --accent: var(--brass);
-  --accent-foreground: var(--parchment);
-  --destructive: oklch(0.55 0.20 25);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: var(--warm-gray);
-  --input: var(--warm-gray);
-  --ring: var(--sky);
+  --accent-foreground: #ffffff;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 29, 67, 0.14);
+  --input: rgba(0, 29, 67, 0.18);
+  --ring: var(--brass);
 
-  --sidebar: var(--parchment);
+  --sidebar: var(--surface);
   --sidebar-foreground: var(--ink);
   --sidebar-primary: var(--navy);
-  --sidebar-primary-foreground: var(--parchment);
-  --sidebar-accent: var(--stone);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--surface);
   --sidebar-accent-foreground: var(--navy);
-  --sidebar-border: var(--warm-gray);
-  --sidebar-ring: var(--sky);
+  --sidebar-border: rgba(0, 29, 67, 0.14);
+  --sidebar-ring: var(--brass);
 
-  --gradient-hero: radial-gradient(1200px 700px at 15% 20%, rgba(252, 110, 6, 0.2), transparent 60%),
-                   radial-gradient(900px 600px at 85% 10%, rgba(252, 110, 6, 0.18), transparent 55%),
-                   radial-gradient(1000px 800px at 60% 100%, rgba(0, 29, 67, 0.5), transparent 60%);
-  --gradient-warm: linear-gradient(135deg, #fc6e06, #fd9844);
-  --gradient-cool: linear-gradient(135deg, #001d43, #00347a);
+  --gradient-hero:
+    radial-gradient(1200px 700px at 15% 20%, rgba(252, 110, 6, 0.16), transparent 60%),
+    radial-gradient(900px 600px at 85% 10%, rgba(252, 110, 6, 0.1), transparent 55%),
+    radial-gradient(1000px 800px at 60% 100%, rgba(0, 29, 67, 0.55), transparent 60%),
+    linear-gradient(180deg, #001d43, #0a2a58);
+  --gradient-warm: linear-gradient(135deg, #fc6e06, #e05f00);
+  --gradient-cool: linear-gradient(135deg, #001d43, #0a2a58);
 }
 
 @layer base {
@@ -111,25 +124,35 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, .font-serif {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.08;
+  h1, h2, h3, h4, .font-serif, .font-heading {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.22;
+    text-transform: uppercase;
     color: var(--color-navy);
   }
-  ::selection { background: var(--color-navy); color: var(--color-parchment); }
+  ::selection { background: var(--color-navy); color: #ffffff; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @utility eyebrow {
-  font-family: var(--font-sans);
+  font-family: var(--font-heading);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-brass);
 }
@@ -151,10 +174,24 @@
 
 @utility paper-texture {
   background-image:
-    radial-gradient(oklch(0.6 0.02 80 / 0.05) 1px, transparent 1px),
-    radial-gradient(oklch(0.6 0.02 80 / 0.04) 1px, transparent 1px);
+    radial-gradient(rgba(0, 29, 67, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(0, 29, 67, 0.03) 1px, transparent 1px);
   background-size: 24px 24px, 40px 40px;
   background-position: 0 0, 12px 12px;
+}
+
+@utility brand-card {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 29, 67, 0.12);
+  box-shadow: var(--shadow-editorial);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+@utility brand-card-hover {
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(252, 110, 6, 0.45);
+    box-shadow: var(--shadow-lift);
+  }
 }
 
 @keyframes fade-up {
@@ -221,4 +258,3 @@
 }
 .scroll-snap-y::-webkit-scrollbar { display: none; }
 @utility snap-item { scroll-snap-align: start; scroll-snap-stop: always; }
-
